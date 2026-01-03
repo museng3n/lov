@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 13% 13%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 13% 13%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 13% 13%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 30 100% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 280 84% 58%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 160 84% 39%;
+    --success-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.75rem;
+
+    /* Triggerio Brand Colors */
+    --triggerio-blue: 217 91% 60%;
+    --triggerio-purple: 258 90% 66%;
+    --triggerio-pink: 292 91% 58%;
+    --triggerio-orange-light: 24 95% 53%;
+    --triggerio-orange: 30 100% 50%;
+
+    /* Gradient */
+    --gradient-main: linear-gradient(to right, hsl(217 91% 60%) 0%, hsl(258 90% 66%) 25%, hsl(292 91% 58%) 50%, hsl(24 95% 53%) 75%, hsl(30 100% 50%) 100%);
+    --gradient-diagonal: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(258 90% 66%) 33%, hsl(292 91% 58%) 66%, hsl(30 100% 50%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.15);
+  }
+
+  .dark {
+    --background: 220 13% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 220 13% 10%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 220 13% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 30 100% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 13% 18%;
+    --muted-foreground: 220 9% 65%;
+
+    --accent: 280 84% 58%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 160 84% 39%;
+    --success-foreground: 0 0% 100%;
+
+    --border: 220 13% 20%;
+    --input: 220 13% 20%;
+    --ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-family: 'Cairo', sans-serif;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+@layer utilities {
+  .gradient-main {
+    background: linear-gradient(to right, hsl(217 91% 60%) 0%, hsl(258 90% 66%) 25%, hsl(292 91% 58%) 50%, hsl(24 95% 53%) 75%, hsl(30 100% 50%) 100%);
+  }
+
+  .gradient-diagonal {
+    background: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(258 90% 66%) 33%, hsl(292 91% 58%) 66%, hsl(30 100% 50%) 100%);
+  }
+
+  .gradient-text {
+    background: linear-gradient(to right, hsl(217 91% 60%), hsl(30 100% 50%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient-shift 4s ease infinite;
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.5s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.3s ease-out forwards;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
