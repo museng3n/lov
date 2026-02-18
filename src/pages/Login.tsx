@@ -57,12 +57,14 @@ const Login = () => {
 
     try {
       // استدعاء API تسجيل الدخول الحقيقي
+      console.log('🔵 Calling login API with:', { email: email.trim() });
       const response = await authAPI.login({
         email: email.trim(),
         password: password
       });
 
       // حفظ Token والمستخدم
+      console.log('🟢 Login response:', response);
       storage.setToken(response.data.token);
       storage.setUser(response.data.user);
 

@@ -18,18 +18,17 @@ apiClient.interceptors.request.use(
   (config) => {
     // الحصول على الـ token من localStorage
     const token = getToken();
-    
+
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
-    
-    // إضافة timestamp للـ debugging
-    if (API_CONFIG.isDevelopment) {
-      console.log(`📤 API Request: ${config.method?.toUpperCase()} ${config.url}`, {
-        data: config.data,
-        params: config.params,
-      });
-    }
+
+    // Debug logging
+    console.log(`📤 API Request: ${config.method?.toUpperCase()} ${config.baseURL}${config.url}`, {
+      data: config.data,
+      params: config.params,
+      headers: config.headers,
+    });
     
     return config;
   },
@@ -43,24 +42,20 @@ apiClient.interceptors.request.use(
 apiClient.interceptors.response.use(
   (response) => {
     // نجاح الطلب
-    if (API_CONFIG.isDevelopment) {
-      console.log(`✅ API Response: ${response.config.url}`, response.data);
-    }
-    
+    console.log(`✅ API Response: ${response.config.url}`, response.data, 'Status:', response.status);
+
     return response;
   },
   (error) => {
     // فشل الطلب
     const { response, request, message } = error;
     
-    if (API_CONFIG.isDevelopment) {
-      console.error('❌ API Error:', {
-        url: error.config?.url,
-        status: response?.status,
-        data: response?.data,
-        message,
-      });
-    }
+    console.error('❌ API Error:', {
+      url: error.config?.url,
+      status: response?.status,
+      data: response?.data,
+      message,
+    });
     
     // معالجة أنواع الأخطاء المختلفة
     if (response) {
