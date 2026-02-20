@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir \"C:\\\\Users\\\\musta\\\\Downloads\\\\new_frontend\")",
+      "Bash(cmd.exe /c \"dir C:\\\\Users\\\\musta\\\\Downloads\\\\new_frontend\")",
+      "Bash(cmd.exe /c \"dir C:\\\\Users\\\\musta\\\\Downloads\\\\new_frontend /b\")",
+      "Bash(cmd.exe /c \"dir /b C:\\\\Users\\\\musta\\\\Downloads\\\\new_frontend\")",
+      "Bash(powershell.exe -Command \"Get-ChildItem ''C:\\\\Users\\\\musta\\\\Downloads\\\\new_frontend'' | Select-Object Name, Mode\")",
+      "Bash(powershell.exe -Command \"Get-ChildItem ''C:\\\\Users\\\\musta\\\\Downloads\\\\new_frontend\\\\shared-api-config'' -Recurse | Select-Object FullName, Mode | Format-Table -AutoSize -Wrap\")",
+      "Bash(powershell.exe -Command \"Get-ChildItem ''C:\\\\Users\\\\musta\\\\Downloads\\\\new_frontend\\\\triggerio-dashboard-build\\\\src'' -Recurse -Depth 2 | Select-Object FullName, Mode | Format-Table -AutoSize -Wrap\")",
+      "Bash(powershell.exe -Command \"Get-ChildItem ''C:\\\\Users\\\\musta\\\\Downloads\\\\new_frontend\\\\triggerio-dashboard-build\\\\src'' | Select-Object Name, Mode | Format-Table -AutoSize\")",
+      "Bash(powershell.exe -Command \"Get-ChildItem ''C:\\\\Users\\\\musta\\\\Downloads\\\\new_frontend\\\\triggerio-dashboard-build'' -Exclude ''node_modules'',''.next'' | Select-Object Name, Mode | Format-Table -AutoSize\")",
+      "Bash(powershell.exe -Command \"Get-ChildItem ''C:\\\\Users\\\\musta\\\\Downloads\\\\new_frontend\\\\triggerio-dashboard-build'' -Recurse -Exclude ''node_modules'',''.next'',''.vercel'' -File | Where-Object { $_FullName -notmatch ''node_modules|\\\\.next|\\\\.vercel'' } | Select-Object FullName | Format-Table -AutoSize -Wrap\")",
+      "Bash(cmd.exe /c \"dir /s /b C:\\\\Users\\\\musta\\\\Downloads\\\\new_frontend\\\\triggerio-dashboard-build\\\\app C:\\\\Users\\\\musta\\\\Downloads\\\\new_frontend\\\\triggerio-dashboard-build\\\\components C:\\\\Users\\\\musta\\\\Downloads\\\\new_frontend\\\\triggerio-dashboard-build\\\\hooks C:\\\\Users\\\\musta\\\\Downloads\\\\new_frontend\\\\triggerio-dashboard-build\\\\lib C:\\\\Users\\\\musta\\\\Downloads\\\\new_frontend\\\\triggerio-dashboard-build\\\\styles\")",
+      "Bash(cmd.exe /c \"dir /s /b C:\\\\Users\\\\musta\\\\Downloads\\\\new_frontend\\\\triggerio-dashboard-build\\\\app\"\")",
+      "Bash(npm install:*)",
+      "Bash(npm run build:*)",
+      "Bash(powershell.exe -Command \"Get-ChildItem ''C:\\\\Users\\\\musta\\\\Downloads\\\\new_frontend\\\\contacts-management'' -Exclude ''node_modules'',''.next'',''.vercel'' | Select-Object Name, Mode | Format-Table -AutoSize\")",
+      "Bash(powershell.exe -Command \"Get-ChildItem ''C:\\\\Users\\\\musta\\\\Downloads\\\\new_frontend\\\\contacts-management\\\\app'' -Recurse -File | Select-Object FullName | Format-Table -AutoSize -Wrap\")",
+      "Bash(powershell.exe -Command \"Get-ChildItem ''C:\\\\Users\\\\musta\\\\Downloads\\\\new_frontend\\\\contacts-management'' -Recurse -File -Exclude ''*.lock*'' | Where-Object { $_FullName -notmatch ''node_modules|\\\\.next|\\\\.vercel|public'' } | Select-Object FullName | Format-Table -AutoSize -Wrap\")",
+      "Bash(powershell.exe -Command \"Get-ChildItem ''C:\\\\Users\\\\musta\\\\Downloads\\\\new_frontend\\\\settings-page-build'' -Exclude ''node_modules'',''.next'',''.vercel'' | Select-Object Name, Mode | Format-Table -AutoSize\")",
+      "Bash(powershell.exe -Command:*)"
+    ]
+  }
+}

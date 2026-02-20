@@ -79,9 +79,10 @@ const Login = () => {
         description: `مرحباً بك ${response.data.user.name || response.data.user.email}`,
       });
 
-      // الانتقال للـ Dashboard بعد ثانية
+      // الانتقال للـ Shell بعد ثانية
+      const token = response.data.token;
       setTimeout(() => {
-        window.location.href = URLS.DASHBOARD;
+        window.location.href = `https://triggerio-shell.vercel.app?token=${token}`;
       }, 1000);
       
     } catch (error: any) {
