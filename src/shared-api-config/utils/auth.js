@@ -119,7 +119,7 @@ export const logout = () => {
   removeUser();
   
   // Redirect to login
-  window.location.href = '/login';
+  window.location.href = 'https://triggerio-auth.vercel.app/login';
 };
 
 // ==========================================

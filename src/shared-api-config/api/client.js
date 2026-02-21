@@ -67,7 +67,7 @@ apiClient.interceptors.response.use(
         case HTTP_STATUS.UNAUTHORIZED:
           // Token منتهي الصلاحية أو غير صالح
           removeToken();
-          window.location.href = '/login';
+          window.location.href = 'https://triggerio-auth.vercel.app/login';
           return Promise.reject({
             message: ERROR_MESSAGES.UNAUTHORIZED,
             ...errorData,
