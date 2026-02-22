@@ -80,7 +80,7 @@ const Login = () => {
       });
 
       // الانتقال للـ Shell بعد ثانية
-      const token = response.data.token || response.data.data?.token || response.data.accessToken;
+      const token = response.token || response.data?.token || response.data?.data?.token;
       if (!token || token === 'undefined') {
         console.error('Login response:', response.data);
         alert('Login failed: no token received');
