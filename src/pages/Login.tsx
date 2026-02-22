@@ -80,7 +80,12 @@ const Login = () => {
       });
 
       // الانتقال للـ Shell بعد ثانية
-      const token = response.data.token;
+      const token = response.data.token || response.data.data?.token || response.data.accessToken;
+      if (!token || token === 'undefined') {
+        console.error('Login response:', response.data);
+        alert('Login failed: no token received');
+        return;
+      }
       setTimeout(() => {
         window.location.href = `https://triggerio-shell.vercel.app?token=${token}`;
       }, 1000);
