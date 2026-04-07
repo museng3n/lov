@@ -87,7 +87,7 @@ const Login = () => {
         return;
       }
       setTimeout(() => {
-        window.location.href = `https://triggerio-shell.vercel.app?token=${token}`;
+        window.location.href = `https://triggerio.io?token=${token}`;
       }, 1000);
       
     } catch (error: any) {
