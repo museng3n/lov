@@ -6,7 +6,7 @@ const isDev = import.meta.env.MODE === 'development';
 const API_CONFIG = {
   // في التطوير: مسار نسبي يمر عبر Vite proxy
   // في الإنتاج: URL الكامل للـ Backend
-  baseURL: isDev ? '/api' : 'https://triggerio-backend.onrender.com/api',
+  baseURL: isDev ? '/api' : 'https://api.triggerio.io/api',
 
   // مهلة الانتظار (30 ثانية)
   timeout: 30000,
