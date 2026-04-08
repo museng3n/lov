@@ -121,7 +121,7 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col lg:flex-row">
+    <div className="relative min-h-screen flex flex-col lg:flex-row">
       {/* Brand Section */}
       <div className="lg:w-[40%] min-h-[280px] lg:min-h-screen">
         <BrandSection />
@@ -258,13 +258,13 @@ const Login = () => {
             </Link>
           </p>
         </div>
-
-        <p className="mt-8 text-center text-xs text-muted-foreground">
-          <Link to="/privacy" className="hover:underline">Privacy Policy</Link>
-          {' | '}
-          <Link to="/terms" className="hover:underline">Terms of Service</Link>
-        </p>
       </div>
+
+      <footer className="absolute bottom-4 left-0 right-0 text-center text-xs text-muted-foreground">
+        <Link to="/privacy" className="hover:underline">Privacy Policy</Link>
+        {'  |  '}
+        <Link to="/terms" className="hover:underline">Terms of Service</Link>
+      </footer>
     </div>
   );
 };
