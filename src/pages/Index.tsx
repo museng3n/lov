@@ -137,7 +137,7 @@ const Index = () => {
         <div className="container mx-auto px-4 text-center">
           <TriggerioLogo size="sm" className="mx-auto mb-4" />
           <p className="text-muted-foreground text-sm">
-            © 2024 Triggerio. جميع الحقوق محفوظة.
+            © {new Date().getFullYear()} Triggerio. جميع الحقوق محفوظة.
           </p>
         </div>
       </footer>
